@@ -8,6 +8,7 @@ from nltk.stem import WordNetLemmatizer
 nltk.download('punkt')
 nltk.download('stopwords')
 nltk.download('wordnet')
+nltk.download('omw-1.4')
 
 def process_text(text):
     # Preserve numbers, basic punctuation, and domain-specific symbols

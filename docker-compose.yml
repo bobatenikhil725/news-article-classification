@@ -1,0 +1,22 @@
+version: '3.8'
+
+services:
+  flask:
+    build: ./flask
+    ports:
+      - "5000:5000"
+    networks:
+      - app-network
+
+  streamlit:
+    build: ./streamlit
+    ports:
+      - "8501:8501"
+    depends_on:
+      - flask
+    networks:
+      - app-network
+
+networks:
+  app-network:
+    driver: bridge

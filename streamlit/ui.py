@@ -1,7 +1,11 @@
+
 import streamlit as st
 import requests
 
 def main():
+    # FLASK_API_URL = "http://flask:5000/predict"  # flask is used when running in Docker
+    FLASK_API_URL = "http://localhost:5000/predict"  # localhost is used when running locally
+
     st.title("News Category Classifier")
     
     # Create a text area for article input
@@ -11,7 +15,7 @@ def main():
         if article_text:
             # Make API request to the Flask endpoint
             response = requests.post(
-                "http://127.0.0.1:5000/predict",
+                FLASK_API_URL,
                 json={"article": article_text}
             )
             

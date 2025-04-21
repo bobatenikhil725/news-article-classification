@@ -7,7 +7,6 @@ RUN pip install --no-cache-dir -r requirements.txt
 
 COPY . .
 
-EXPOSE 8501
 EXPOSE 5000
 
-CMD ["sh", "-c", "streamlit run ui.py & python app.py"]
+CMD ["bash", "-c", "python app.py"]
